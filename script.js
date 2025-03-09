@@ -1,25 +1,30 @@
-var typed = new Typed(".typing", {
-  strings: ["", "Web Designer", "web Developer", "Graphic Designer", "Fresher"],
-  typeSpeed: 100,
-  BackSpeed: 60,
-  loop: true,
+// Typing Animation
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const navToggler = document.querySelector('.nav-toggler');
+    const aside = document.querySelector('.aside');
+    const mainContent = document.querySelector('.main-content');
+
+    navToggler.addEventListener('click', () => {
+        aside.classList.toggle('active');
+        mainContent.classList.toggle('active');
+    });
+
+    // Optional: Close sidebar when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!aside.contains(e.target) && !navToggler.contains(e.target) && aside.classList.contains('active')) {
+            aside.classList.remove('active');
+            mainContent.classList.remove('active');
+        }
+    });
+
+    // Optional: Prevent body scroll when sidebar is open
+    aside.addEventListener('transitionend', () => {
+        if (aside.classList.contains('active')) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    });
 });
-document
-  .getElementById("contactForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-
-    let name = document.getElementById("name").value.trim();
-    let email = document.getElementById("email").value.trim();
-    let subject = document.getElementById("subject").value.trim();
-    let message = document.getElementById("message").value.trim();
-
-    if (name === "" || email === "" || subject === "" || message === "") {
-      alert("Please fill out all fields before submitting.");
-      return;
-    }
-
-    alert(`Thank you, ${name}! Your message has been sent successfully.`);
-
-    document.getElementById("contactForm").reset();
-  });

@@ -1,42 +1,36 @@
 const styleSwitcherToggle = document.querySelector(".style-switcher-toggler");
-styleSwitcherToggle.addEventListener("click",()=>{
-    document.querySelector(".style-switcher").classList.toggle("open");   
-})
-window.addEventListener("scroll",() =>{
-    if (document.querySelector(".style-switcher").classList.contains("open"))
-    {
-        document.querySelector(".style-switcher").classList.remove("open");   
+styleSwitcherToggle.addEventListener("click", () => {
+    document.querySelector(".style-switcher").classList.toggle("open");
+});
 
-    }    
-})
-const alternateStyles = document.querySelectorAll(".alternate-style");
-function setActiveStyle(color)
-{
+window.addEventListener("scroll", () => {
+    if (document.querySelector(".style-switcher").classList.contains("open")) {
+        document.querySelector(".style-switcher").classList.remove("open");
+    }
+});
+
+function setActiveStyle(color) {
+    const alternateStyles = document.querySelectorAll(".alternate-style");
     alternateStyles.forEach((style) => {
-        if(color === style.getAttribute("title"))
-        {
+        if (style.getAttribute("title") === color) {
             style.removeAttribute("disabled");
-
-        }   
-        else
-        {
-            style.setAttribute("disabled","true");
-        } 
-    })
+        } else {
+            style.setAttribute("disabled", "true");
+        }
+    });
 }
+
 const dayNight = document.querySelector(".day-night");
-dayNight.addEventListener("click" , () =>{
+dayNight.addEventListener("click", () => {
     dayNight.querySelector("i").classList.toggle("fa-sun");
     dayNight.querySelector("i").classList.toggle("fa-moon");
     document.body.classList.toggle("dark");
-})
-window.addEventListener("load", () =>{
-    if(document.body.classList.contains("dark"))
-    {
+});
+
+window.addEventListener("load", () => {
+    if (document.body.classList.contains("dark")) {
         dayNight.querySelector("i").classList.add("fa-sun");
-    }
-    else
-    {
+    } else {
         dayNight.querySelector("i").classList.add("fa-moon");
     }
-} )
+});
