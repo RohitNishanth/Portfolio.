@@ -1,111 +1,145 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('contactForm');
-    const feedback = document.getElementById('formFeedback');
-    const inputs = form.querySelectorAll('.form-control');
+document.addEventListener('DOMContentLoaded', function() {
+    var form = document.getElementById('contactForm');
+    var feedback = document.getElementById('formFeedback');
+    var inputs = form ? form.querySelectorAll('.form-control') : [];
+
+    // Convert NodeList to Array for better compatibility with older browsers
+    inputs = Array.prototype.slice.call(inputs);
 
     // Real-time validation and error display
-    inputs.forEach(input => {
-        const errorSpan = document.createElement('span');
+    inputs.forEach(function(input) {
+        var errorSpan = document.createElement('span');
         errorSpan.className = 'error-message';
-        errorSpan.style.color = '#ff4d6d';
-        errorSpan.style.fontSize = '14px';
-        errorSpan.style.display = 'block';
-        errorSpan.style.marginTop = '5px';
-        input.parentNode.appendChild(errorSpan);
+        setStyle(errorSpan, {
+            'color': '#ff4d6d',
+            'fontSize': '14px',
+            'display': 'block',
+            'marginTop': '5px'
+        });
+        if (input.parentNode) {
+            input.parentNode.appendChild(errorSpan);
+        }
 
-        input.addEventListener('input', () => {
+        input.addEventListener('input', function() {
             validateField(input, errorSpan);
         });
     });
 
-    form.addEventListener('submit', (e) => {
-        e.preventDefault();
+    if (form) {
+        form.addEventListener('submit', function(e) {
+            e = e || window.event; // Fallback for older browsers
+            if (e.preventDefault) {
+                e.preventDefault();
+            } else {
+                e.returnValue = false; // IE fallback
+            }
 
-        // Reset feedback
-        feedback.style.display = 'none';
-        feedback.textContent = '';
-        inputs.forEach(input => {
-            const errorSpan = input.nextElementSibling;
-            errorSpan.style.display = 'none';
-        });
+            // Reset feedback
+            if (feedback) {
+                setStyle(feedback, { 'display': 'none' });
+                feedback.textContent = '';
+            }
+            inputs.forEach(function(input) {
+                var errorSpan = input.nextElementSibling || input.nextSibling; // Fallback for older browsers
+                if (errorSpan) {
+                    setStyle(errorSpan, { 'display': 'none' });
+                }
+            });
 
-        // Check honeypot
-        const honeypot = form.querySelector('input[name="honeypot"]').value;
-        if (honeypot) {
-            feedback.textContent = 'Bot detection triggered. Please try again.';
-            feedback.className = 'form-feedback error';
-            feedback.style.display = 'block';
-            return;
-        }
+            // Check honeypot
+            var honeypotField = form.querySelector('input[name="honeypot"]');
+            var honeypot = honeypotField ? honeypotField.value : '';
+            if (honeypot && feedback) {
+                feedback.textContent = 'Bot detection triggered. Please try again.';
+                feedback.className = 'form-feedback error';
+                setStyle(feedback, { 'display': 'block' });
+                return;
+            }
 
-        // Validate all fields
-        let isValid = true;
-        inputs.forEach(input => {
-            const errorSpan = input.nextElementSibling;
-            if (!validateField(input, errorSpan)) {
-                isValid = false;
+            // Validate all fields
+            var isValid = true;
+            inputs.forEach(function(input) {
+                var errorSpan = input.nextElementSibling || input.nextSibling;
+                if (!validateField(input, errorSpan)) {
+                    isValid = false;
+                }
+            });
+
+            if (isValid && feedback) {
+                // Simulate form submission
+                feedback.textContent = 'Thank you! Your message has been sent successfully.';
+                feedback.className = 'form-feedback success';
+                setStyle(feedback, { 'display': 'block' });
+
+                // Reset form
+                if (form.reset) {
+                    form.reset();
+                }
+
+                // Auto-hide success message after 5 seconds
+                setTimeout(function() {
+                    if (feedback) {
+                        setStyle(feedback, { 'display': 'none' });
+                    }
+                }, 5000);
+            } else if (feedback) {
+                feedback.textContent = 'Please correct the errors in the form.';
+                feedback.className = 'form-feedback error';
+                setStyle(feedback, { 'display': 'block' });
             }
         });
-
-        if (isValid) {
-            // Simulate form submission (replace with actual backend call)
-            feedback.textContent = 'Thank you! Your message has been sent successfully.';
-            feedback.className = 'form-feedback success';
-            feedback.style.display = 'block';
-
-            // Reset form
-            form.reset();
-
-            // Auto-hide success message after 5 seconds
-            setTimeout(() => {
-                feedback.style.display = 'none';
-            }, 5000);
-        } else {
-            feedback.textContent = 'Please correct the errors in the form.';
-            feedback.className = 'form-feedback error';
-            feedback.style.display = 'block';
-        }
-    });
+    }
 
     function validateField(input, errorSpan) {
-        let isValid = true;
+        var isValid = true;
         switch (input.name) {
             case 'name':
-                const namePattern = /^[A-Za-z\s]{2,30}$/;
+                var namePattern = /^[A-Za-z\s]{2,30}$/;
                 if (!namePattern.test(input.value.trim())) {
                     errorSpan.textContent = 'Name must be 2-30 letters only.';
-                    errorSpan.style.display = 'block';
-                    input.style.borderColor = '#ff4d6d';
+                    setStyle(errorSpan, { 'display': 'block' });
+                    setStyle(input, { 'borderColor': '#ff4d6d' });
                     isValid = false;
                 } else {
-                    errorSpan.style.display = 'none';
-                    input.style.borderColor = '';
+                    setStyle(errorSpan, { 'display': 'none' });
+                    setStyle(input, { 'borderColor': '' });
                 }
                 break;
             case 'email':
-                const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
                 if (!emailPattern.test(input.value.trim())) {
                     errorSpan.textContent = 'Please enter a valid email address.';
-                    errorSpan.style.display = 'block';
-                    input.style.borderColor = '#ff4d6d';
+                    setStyle(errorSpan, { 'display': 'block' });
+                    setStyle(input, { 'borderColor': '#ff4d6d' });
                     isValid = false;
                 } else {
-                    errorSpan.style.display = 'none';
-                    input.style.borderColor = '';
+                    setStyle(errorSpan, { 'display': 'none' });
+                    setStyle(input, { 'borderColor': '' });
                 }
                 break;
             case 'message':
                 if (input.value.trim().length < 10) {
                     errorSpan.textContent = 'Message must be at least 10 characters.';
-                    errorSpan.style.display = 'block';
-                    input.style.borderColor = '#ff4d6d';
+                    setStyle(errorSpan, { 'display': 'block' });
+                    setStyle(input, { 'borderColor': '#ff4d6d' });
                     isValid = false;
                 } else {
-                    errorSpan.style.display = 'none';
-                    input.style.borderColor = '';
+                    setStyle(errorSpan, { 'display': 'none' });
+                    setStyle(input, { 'borderColor': '' });
                 }
                 break;
         }
         return isValid;
+    }
+
+    // Helper function for cross-browser style setting
+    function setStyle(element, styles) {
+        if (element && element.style) {
+            for (var property in styles) {
+                if (styles.hasOwnProperty(property)) {
+                    element.style[property] = styles[property];
+                }
+            }
+        }
     }
 });

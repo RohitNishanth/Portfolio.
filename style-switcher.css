@@ -4,16 +4,21 @@
     top: 60px;
     padding: 15px;
     width: 200px;
+    border: 1px solid #e8dfec; /* Fallback */
     border: 1px solid var(--bg-black-50);
+    background: #fdf9ff; /* Fallback */
     background: var(--bg-black-100);
     z-index: 101;
     border-radius: 10px;
+    -webkit-transition: all 0.3s ease; /* Older Webkit */
     transition: all 0.3s ease;
+    -webkit-transform: translateX(100%); /* Older Webkit */
     transform: translateX(100%);
     box-shadow: 0 0 20px rgba(0, 247, 255, 0.3);
 }
 
 .style-switcher.open {
+    -webkit-transform: translateX(-25px); /* Older Webkit */
     transform: translateX(-25px);
 }
 
@@ -23,12 +28,16 @@
     width: 40px;
     text-align: center;
     font-size: 20px;
+    background: #fdf9ff; /* Fallback */
     background: var(--bg-black-100);
+    color: #302e4d; /* Fallback */
     color: var(--text-black-900);
     right: 100%;
+    border: 1px solid #e8dfec; /* Fallback */
     border: 1px solid var(--bg-black-50);
     margin-right: 25px;
     cursor: pointer;
+    -webkit-transition: all 0.3s ease; /* Older Webkit */
     transition: all 0.3s ease;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
@@ -48,6 +57,7 @@
 
 .style-switcher h4 {
     margin: 0 0 10px;
+    color: #504e70; /* Fallback */
     color: var(--text-black-700);
     font-size: 16px;
     font-weight: 600;
@@ -56,8 +66,11 @@
 }
 
 .style-switcher .colors {
+    display: -webkit-flex; /* Older Safari */
     display: flex;
+    -webkit-justify-content: space-between; /* Older Safari */
     justify-content: space-between;
+    -webkit-flex-wrap: wrap; /* Older Safari */
     flex-wrap: wrap;
 }
 
@@ -68,10 +81,12 @@
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px rgba(0, 247, 255, 0.3);
+    -webkit-transition: all 0.3s ease; /* Older Webkit */
     transition: all 0.3s ease;
 }
 
 .style-switcher .colors span:hover {
+    -webkit-transform: scale(1.1); /* Older Webkit */
     transform: scale(1.1);
 }
 

@@ -3,14 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style-switcher.css">
-    <link rel="stylesheet" href="color-1.css" class="alternate-style" title="color-1" disabled>
-    <link rel="stylesheet" href="color-2.css" class="alternate-style" title="color-2" disabled>
-    <link rel="stylesheet" href="color-3.css" class="alternate-style" title="color-3" disabled>
-    <link rel="stylesheet" href="color-4.css" class="alternate-style" title="color-4" disabled>
-    <link rel="stylesheet" href="color-5.css" class="alternate-style" title="color-5" disabled>
+    <link rel="stylesheet" href="color-1.css" class="alternate-style" title="color-1" disabled="disabled">
+    <link rel="stylesheet" href="color-2.css" class="alternate-style" title="color-2" disabled="disabled">
+    <link rel="stylesheet" href="color-3.css" class="alternate-style" title="color-3" disabled="disabled">
+    <link rel="stylesheet" href="color-4.css" class="alternate-style" title="color-4" disabled="disabled">
+    <link rel="stylesheet" href="color-5.css" class="alternate-style" title="color-5" disabled="disabled">
+    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Fallback for older browsers without HTML5shiv -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <![endif]-->
     <title>Rohit Nishanth - Software Developer</title>
 </head>
 <body>
@@ -32,8 +40,8 @@
             </nav>
         </header>
 
-        <!-- Nav Toggler (Moved outside aside) -->
-        <div class="nav-toggler">
+        <!-- Nav Toggler -->
+        <div class="nav-toggler" role="button" aria-label="Toggle navigation">
             <span></span>
         </div>
 
@@ -49,16 +57,18 @@
                                 I'm a <span class="typing">Frontend Magician 🪄</span>
                             </h3>
                             <p>
-                                Passionate Software Developer who turns coffee ☕ into code and ideas into sleek, high-performance web applications.  
-                                Certified in Python Full Stack Development, with hands-on experience in React, Redux, Django, and MySQL.  
+                                Passionate Software Developer who turns coffee ☕ into code and ideas into sleek, high-performance web applications.
+                                Certified in Python Full Stack Development, with hands-on experience in React, Redux, Django, and MySQL.
                             </p>
                             <p>
-                                I craft seamless, responsive web experiences with a mix of creativity 🎨 and logic 💡because great UX/UI is where art meets tech!
+                                I craft seamless, responsive web experiences with a mix of creativity 🎨 and logic 💡 because great UX/UI is where art meets tech!
                             </p>
                             <a href="#contact" class="btn hire-me">Let’s Build Something Cool 🚀</a>
                         </div>
                         <div class="home-img padd-15">
                             <img src="./IMAGES/rohit.jpeg" alt="Rohit Nishanth">
+                            <!-- Fallback for older browsers -->
+                            <noscript><img src="./IMAGES/rohit.jpeg" alt="Rohit Nishanth"></noscript>
                         </div>
                     </div>
                 </div>
@@ -78,12 +88,12 @@
                                 <div class="about-text padd-15">
                                     <h3>Hey, I'm <span>Rohit Nishanth</span> — a Software Developer 🚀</h3>
                                     <p>
-                                        I’m a passionate Software Developer who loves turning ideas into interactive, high-performance web applications.  
-                                        Whether it's crafting sleek UIs, optimizing backend performance, or solving tricky bugs, I thrive on bringing digital experiences to life.  
+                                        I’m a passionate Software Developer who loves turning ideas into interactive, high-performance web applications.
+                                        Whether it's crafting sleek UIs, optimizing backend performance, or solving tricky bugs, I thrive on bringing digital experiences to life.
                                     </p>
                                     <p>
-                                        A Python Full Stack enthusiast with hands-on experience in React, Redux, Django, and MySQL.  
-                                        When I’m not coding, you’ll find me debugging my life choices or brainstorming my next big project. 😆  
+                                        A Python Full Stack enthusiast with hands-on experience in React, Redux, Django, and MySQL.
+                                        When I’m not coding, you’ll find me debugging my life choices or brainstorming my next big project. 😆
                                     </p>
                                 </div>
                             </div>
@@ -97,16 +107,16 @@
                                             <p>Age : <span>21</span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Github : <span><a href="https://github.com/RohitNishanth">github.com/RohitNishanth</a></span></p>
+                                            <p>Github : <span><a href="https://github.com/RohitNishanth" target="_blank" rel="noopener noreferrer">github.com/RohitNishanth</a></span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Linkedin : <span><a href="https://www.linkedin.com/in/rohitns03/">linkedin.com/in/rohitns03</a></span></p>
+                                            <p>Linkedin : <span><a href="https://www.linkedin.com/in/rohitns03/" target="_blank" rel="noopener noreferrer">linkedin.com/in/rohitns03</a></span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Email : <span>rohitselvan22@gmail.com</span></p>
+                                            <p>Email : <span><a href="mailto:rohitselvan22@gmail.com">rohitselvan22@gmail.com</a></span></p>
                                         </div>
                                         <div class="info-item padd-15">
-                                            <p>Phone : <span>9500664503</span></p>
+                                            <p>Phone : <span><a href="tel:+919500664503">9500664503</a></span></p>
                                         </div>
                                         <div class="info-item padd-15">
                                             <p>City : <span>Chennai</span></p>
@@ -117,7 +127,7 @@
                                     </div>
                                     <div class="row">
                                         <div class="buttons padd-15">
-                                            <a href="https://drive.google.com/file/d/1q9mqP8yOhF-TD7I7gBC4-AkKm_1T-H2J/view?usp=sharing" class="btn">Download CV</a>
+                                            <a href="https://drive.google.com/file/d/1q9mqP8yOhF-TD7I7gBC4-AkKm_1T-H2J/view?usp=sharing" class="btn" target="_blank" rel="noopener noreferrer">Download CV</a>
                                             <a href="#contact" class="btn hire-me">Hire Me</a>
                                         </div>
                                     </div>
@@ -306,7 +316,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner">
                                 <div class="portfolio-img">
-                                    <a href="https://mern-netflix-clone-1-9nov.onrender.com/" target="_blank">
+                                    <a href="https://mern-netflix-clone-1-9nov.onrender.com/" target="_blank" rel="noopener noreferrer">
                                         <img src="./IMAGES/Netflix.png" alt="Netflix Clone Project">
                                     </a>
                                 </div>
@@ -315,7 +325,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner">
                                 <div class="portfolio-img">
-                                    <a href="https://github.com/RohitNishanth/eCommerce-Project" target="_blank">
+                                    <a href="https://github.com/RohitNishanth/eCommerce-Project" target="_blank" rel="noopener noreferrer">
                                         <img src="./IMAGES/Ecommerce.png" alt="eCommerce Project">
                                     </a>
                                 </div>
@@ -324,7 +334,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner">
                                 <div class="portfolio-img">
-                                    <a href="#">
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
                                         <img src="./IMAGES/portfolio project copy.png" alt="Portfolio Project">
                                     </a>
                                 </div>
@@ -333,7 +343,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner">
                                 <div class="portfolio-img">
-                                    <a href="https://rohitnishanth.github.io/RohitRetreatRestaurant/">
+                                    <a href="https://rohitnishanth.github.io/RohitRetreatRestaurant/" target="_blank" rel="noopener noreferrer">
                                         <img src="./IMAGES/projectRestaurant copy.jpg" alt="Restaurant Project">
                                     </a>
                                 </div>
@@ -342,7 +352,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner">
                                 <div class="portfolio-img">
-                                    <a href="https://project-recipe-git-main-rohit-nishanths-projects.vercel.app/">
+                                    <a href="https://project-recipe-git-main-rohit-nishanths-projects.vercel.app/" target="_blank" rel="noopener noreferrer">
                                         <img src="./IMAGES/Recipe.png" alt="Recipe Management Project">
                                     </a>
                                 </div>
@@ -351,7 +361,7 @@
                         <div class="portfolio-item padd-15">
                             <div class="portfolio-item-inner">
                                 <div class="portfolio-img">
-                                    <a href="https://investment-calculator-rho-ashy.vercel.app/">
+                                    <a href="https://investment-calculator-rho-ashy.vercel.app/" target="_blank" rel="noopener noreferrer">
                                         <img src="./IMAGES/Investment Calc.png" alt="Investment Calculator Project">
                                     </a>
                                 </div>
@@ -378,8 +388,8 @@
                         <div class="certificate-item padd-15">
                             <div class="certificate-item-inner">
                                 <div class="certificate-img">
-                                    <a href="https://coursera.org/share/05d36d184b6fa9569c687ef92dcefbee" target="_blank">
-                                        <img src="./IMAGES/Google Python.png" alt="Google Python">
+                                    <a href="https://coursera.org/share/05d36d184b6fa9569c687ef92dcefbee" target="_blank" rel="noopener noreferrer">
+                                        <img src="./IMAGES/Google Python.png" alt="Google Python Certificate">
                                     </a>
                                 </div>
                             </div>
@@ -387,8 +397,8 @@
                         <div class="certificate-item padd-15">
                             <div class="certificate-item-inner">
                                 <div class="certificate-img">
-                                    <a href="https://coursera.org/share/a27ff128ec94e297cb7527198802b2b4" target="_blank">
-                                        <img src="./IMAGES/Meta React.png" alt="Meta React">
+                                    <a href="https://coursera.org/share/a27ff128ec94e297cb7527198802b2b4" target="_blank" rel="noopener noreferrer">
+                                        <img src="./IMAGES/Meta React.png" alt="Meta React Certificate">
                                     </a>
                                 </div>
                             </div>
@@ -396,8 +406,8 @@
                         <div class="certificate-item padd-15">
                             <div class="certificate-item-inner">
                                 <div class="certificate-img">
-                                    <a href="https://drive.google.com/file/d/1ZT6_RKvHqxl6-6-LzOTVLAReEJdrbGjZ/view?usp=sharing" target="_blank">
-                                        <img src="./IMAGES/U-WDB.png" alt="Web Development Bootcamp">
+                                    <a href="https://drive.google.com/file/d/1ZT6_RKvHqxl6-6-LzOTVLAReEJdrbGjZ/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                        <img src="./IMAGES/U-WDB.png" alt="Web Development Bootcamp Certificate">
                                     </a>
                                 </div>
                             </div>
@@ -405,8 +415,8 @@
                         <div class="certificate-item padd-15">
                             <div class="certificate-item-inner">
                                 <div class="certificate-img">
-                                    <a href="https://drive.google.com/file/d/1iJZyvPNeMOqfdGKKGhvfAZsYHS7Y2F5n/view?usp=drive_link" target="_blank">
-                                        <img src="./IMAGES/U-Python.png" alt="Python">
+                                    <a href="https://drive.google.com/file/d/1iJZyvPNeMOqfdGKKGhvfAZsYHS7Y2F5n/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                                        <img src="./IMAGES/U-Python.png" alt="Python Certificate">
                                     </a>
                                 </div>
                             </div>
@@ -414,8 +424,8 @@
                         <div class="certificate-item padd-15">
                             <div class="certificate-item-inner">
                                 <div class="certificate-img">
-                                    <a href="https://drive.google.com/file/d/1tbrUWvP3Arqz8D8TixERYkvmz9dXpY1N/view?usp=drive_link" target="_blank">
-                                        <img src="./IMAGES/U-SQL.png" alt="SQL">
+                                    <a href="https://drive.google.com/file/d/1tbrUWvP3Arqz8D8TixERYkvmz9dXpY1N/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                                        <img src="./IMAGES/U-SQL.png" alt="SQL Certificate">
                                     </a>
                                 </div>
                             </div>
@@ -423,8 +433,8 @@
                         <div class="certificate-item padd-15">
                             <div class="certificate-item-inner">
                                 <div class="certificate-img">
-                                    <a href="https://drive.google.com/file/d/1ZBEi5ihI_UDog_LVfSGr0_l_0FDzbgpa/view?usp=sharing" target="_blank">
-                                        <img src="./IMAGES/U-Accenture.png" alt="Accenture">
+                                    <a href="https://drive.google.com/file/d/1ZBEi5ihI_UDog_LVfSGr0_l_0FDzbgpa/view?usp=sharing" target="_blank" rel="noopener noreferrer">
+                                        <img src="./IMAGES/U-Accenture.png" alt="Accenture Certificate">
                                     </a>
                                 </div>
                             </div>
@@ -433,7 +443,7 @@
                 </div>
             </section>
 
-            <!-- Enhanced Contact Section with Form Validation -->
+            <!-- Enhanced Contact Section with Form -->
             <section class="contact section" id="contact">
                 <div class="container">
                     <h2 class="contact-title">Get In Touch</h2>
@@ -442,7 +452,7 @@
                         <div class="contact-info-item">
                             <div class="icon"><i class="fa-solid fa-phone"></i></div>
                             <h4>Call Me</h4>
-                            <p>+91 9500664503</p>
+                            <p><a href="tel:+919500664503">+91 9500664503</a></p>
                         </div>
                         <div class="contact-info-item">
                             <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
@@ -452,28 +462,29 @@
                         <div class="contact-info-item">
                             <div class="icon"><i class="fa-solid fa-envelope"></i></div>
                             <h4>Email</h4>
-                            <p>rohitselvan22@gmail.com</p>
+                            <p><a href="mailto:rohitselvan22@gmail.com">rohitselvan22@gmail.com</a></p>
                         </div>
                     </div>
                     <div class="contact-social">
                         <h4>Connect With Me</h4>
                         <div class="social-icons">
-                            <a href="https://www.linkedin.com/in/rohitns03/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                            <a href="https://github.com/RohitNishanth" target="_blank"><i class="fa-brands fa-github"></i></a>
-                            <a href="https://twitter.com/Rohitns03" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/in/rohitns03/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/RohitNishanth" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
+                            <a href="https://twitter.com/Rohitns03" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-twitter"></i></a>
                         </div>
                     </div>
                     <div class="contact-form">
-                        <form id="contactForm" novalidate>
+                        <form id="contactForm" method="post" action="#" novalidate="novalidate">
                             <div class="form-item">
-                                <input type="text" class="form-control" name="name" placeholder="Your Name" required pattern="[A-Za-z\s]{2,30}">
+                                <input type="text" class="form-control" name="name" placeholder="Your Name" required="required" pattern="[A-Za-z\s]{2,30}" aria-label="Your Name">
                             </div>
                             <div class="form-item">
-                                <input type="email" class="form-control" name="email" placeholder="Your Email" required>
+                                <input type="email" class="form-control" name="email" placeholder="Your Email" required="required" aria-label="Your Email">
                             </div>
                             <div class="form-item">
-                                <textarea class="form-control" name="message" placeholder="Your Message" required minlength="10"></textarea>
+                                <textarea class="form-control" name="message" placeholder="Your Message" required="required" minlength="10" aria-label="Your Message"></textarea>
                             </div>
+                            <!-- Honeypot field for spam prevention -->
                             <div class="form-item" style="display: none;">
                                 <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
                             </div>
@@ -493,34 +504,62 @@
 
     <!-- Style Switcher -->
     <div class="style-switcher">
-        <div class="style-switcher-toggler s-icon">
+        <div class="style-switcher-toggler s-icon" role="button" aria-label="Toggle Style Switcher">
             <i class="fas fa-cog fa-spin"></i>
         </div>
-        <div class="day-night s-icon">
+        <div class="day-night s-icon" role="button" aria-label="Toggle Dark Mode">
             <i class="fas fa-moon"></i>
         </div>
         <h4>Theme Colors</h4>
         <div class="colors">
-            <span class="color-1" onclick="setActiveStyle('color-1')"></span>
-            <span class="color-2" onclick="setActiveStyle('color-2')"></span>
-            <span class="color-3" onclick="setActiveStyle('color-3')"></span>
-            <span class="color-4" onclick="setActiveStyle('color-4')"></span>
-            <span class="color-5" onclick="setActiveStyle('color-5')"></span>
+            <span class="color-1" onclick="setActiveStyle('color-1')" role="button" aria-label="Switch to Color 1"></span>
+            <span class="color-2" onclick="setActiveStyle('color-2')" role="button" aria-label="Switch to Color 2"></span>
+            <span class="color-3" onclick="setActiveStyle('color-3')" role="button" aria-label="Switch to Color 3"></span>
+            <span class="color-4" onclick="setActiveStyle('color-4')" role="button" aria-label="Switch to Color 4"></span>
+            <span class="color-5" onclick="setActiveStyle('color-5')" role="button" aria-label="Switch to Color 5"></span>
         </div>
     </div>
 
     <!-- Scripts -->
+    <!-- Polyfills for Older Browsers -->
+    <!--[if lt IE 9]>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.2.20171210/classList.min.js"></script>
+    <![endif]-->
+    <!-- Typed.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js" integrity="sha512-+2pW8xXU/rNr7VS+H62aqapfRpqFwnSQh9ap6THjsm41AxgA0MhFRtfrABS+Lx2KHJn82UOrnBKhjZOXpom2LQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Custom Scripts -->
     <script src="script.js"></script>
     <script src="style-switcher.js"></script>
+    <!-- Inline Typed.js Script -->
     <script>
-        var typed = new Typed('.typing', {
-            strings: ['Frontend Magician 🪄', 'Full Stack Developer 💻', 'UI/UX Enthusiast 🎨'],
-            typeSpeed: 20,
-            backSpeed: 30,
-            loop: true
-        });
+        (function() {
+            // Check if Typed.js is loaded
+            if (typeof Typed === 'function') {
+                var typed = new Typed('.typing', {
+                    strings: ['Frontend Magician 🪄', 'Full Stack Developer 💻', 'UI/UX Enthusiast 🎨'],
+                    typeSpeed: 20,
+                    backSpeed: 30,
+                    loop: true
+                });
+            } else {
+                // Fallback for browsers without Typed.js or JS disabled
+                document.querySelector('.typing').textContent = 'Frontend Magician 🪄';
+            }
+        })();
     </script>
-    <script src="contact-form.js"></script> <!-- New script file for form handling -->
+    <script src="contact-form.js"></script>
+    <!-- Noscript Fallback -->
+    <noscript>
+        <style>
+            .typing { display: inline; }
+            .style-switcher { display: none; }
+            .nav-toggler { display: none; }
+            .aside { transform: translateX(0); }
+            .main-content { padding-left: 270px; }
+        </style>
+        <p style="text-align: center; color: #ff4d6d;">JavaScript is disabled. Some features may not work as expected.</p>
+    </noscript>
 </body>
-</html> 
+</html>
